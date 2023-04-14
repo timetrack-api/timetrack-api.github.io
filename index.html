@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTrack - API Documentacion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="TituloApi">
+        <h3>Documentación APIRest para TimeTrack <br> APP 1.0</h3>
+        Creada por Ricardo López
+    </header>
+    <section id="Contenido">
+    <!--Auth-->
+        <details class="ApiCategoria">
+            <summary class="ApiCategoriaNombre">Auth</summary>
+            <div class="ApiCategoriaContenido">
+                <!--Auth login-->
+                <details class="ApiEndPoint" style="--color: dodgerblue;">
+                    <summary class="EndPoint">
+                        <span class="Metodo">GET</span>
+                        <span class="Directorio"><b>/api/auth/login</b></span>
+                        <span class="Descripcion">Iniciar sesión</span>
+                    </summary>
+                    <div class="EndPointDescripcion">
+                        <span>Iniciar sesión en el sistema</span>
+                        <span style="--fondo: white;"><b>Parametros</b></span>
+                        <table class="TablaParametros">
+                            <tr class="TablaFila">
+                                <td class="TablaColumna">Nombre</td>
+                                <td class="TablaColumna">Descripción</td>
+                            </tr>
+                            <tr class="TablaFila">
+                                <td class="TablaColumna">id <br><b>[String]</b></td>
+                                <td>Representa el identificador o codigo de empleado</td>
+                            </tr>
+                            <tr class="TablaFila">
+                                <td class="TablaColumna">pwd <br><b>[String]</b></td>
+                                <td>Representa la contraseña del perfil del empleado</td>
+                            </tr>
+                        </table>
+                        <span style="--fondo: white;"><b>Respuestas</b></span>
+                        <span>
+                        Ejemplo:
+                        <br><br>
+                        <pre class="RespuestaApi">
+                        <code>
+    [
+        {
+            "tipo":"administrador"
+        }
+    ]
+                        </code></pre>
+                        </span>
+                    </div>
+                </details>
+                <!--Auth Info-->
+                <details class="ApiEndPoint" style="--color: dodgerblue;">
+                    <summary class="EndPoint">
+                        <span class="Metodo">GET</span>
+                        <span class="Directorio"><b>/api/auth/info/{id}</b></span>
+                        <span class="Descripcion">Información usuario logueado</span>
+                    </summary>
+                    <div class="EndPointDescripcion">
+                        <span>Obtiene la información básica del usuario logueado</span>
+                        <span style="--fondo: white;"><b>Parametros</b></span>
+                        <table class="TablaParametros">
+                            <tr class="TablaFila">
+                                <td class="TablaColumna">Nombre</td>
+                                <td class="TablaColumna">Descripción</td>
+                            </tr>
+                            <tr class="TablaFila">
+                                <td class="TablaColumna">{id} <br><b>[String]</b></td>
+                                <td>Representa el identificador o codigo de empleado</td>
+                            </tr>
+                        </table>
+                        <span style="--fondo: white;"><b>Respuestas</b></span>
+                        <span>
+                        Ejemplo:
+                        <br><br>
+                        <pre class="RespuestaApi">
+                        <code>
+    [
+        {
+            "nombre_usuario": "string",
+            "apellidos_usuario": "string",
+            "puesto_usuario": "string"
+        }
+    ]
+                        </code></pre>
+                        </span>
+                    </div>
+                </details>
+                <!---->
+            </div>
+        </details>
+
+
+
+        <!--siguiente categoria-->
+        <details class="ApiCategoria">
+            <summary class="ApiCategoriaNombre">User-data</summary>
+            <div class="ApiCategoriaContenido">
+                <!--Auth login-->
+                <details class="ApiEndPoint" style="--color: dodgerblue;">
+                    <summary class="EndPoint">
+                        <span class="Metodo">GET</span>
+                        <span class="Directorio"><b>/api/userdata/all</b></span>
+                        <span class="Descripcion">Obtener los usuarios</span>
+                    </summary>
+                    <div class="EndPointDescripcion">
+                        <span>Obtiene todos los usuarios registrados en el sistema.</span>
+                        <span style="--fondo: white;"><b>Parametros</b></span>
+                        <table class="TablaParametros">
+                            <tr class="TablaFila">
+                                <td class="TablaColumna">Nombre</td>
+                                <td class="TablaColumna">Descripción</td>
+                            </tr>
+                            <tr class="TablaFila">
+                                <td class="TablaColumna">Ninguno<br><b>[none]</b></td>
+                                <td>No se necesita enviar parametros para esta consulta.</td>
+                            </tr>
+                        </table>
+                        <span style="--fondo: white;"><b>Respuestas</b></span>
+                        <span>
+                        Ejemplo: <b>Esta consulta genera diferentes cantidades de registros</b>
+                        <br><br>
+                        <pre class="RespuestaApi">
+                        <code>
+    [
+        {
+            "id_Usuario":"String",
+            "nombre_usuario":"String",
+            "puesto_usuario":"String"
+        },
+        {
+            "id_Usuario":"String",
+            "nombre_usuario":"String",
+            "puesto_usuario":"String"
+        }
+    ]
+                        </code></pre>
+                        </span>
+                    </div>
+                </details>
+                <!---->
+            </div>
+        </details>
+        <!---->
+
+    </section>
+</body>
+</html>
